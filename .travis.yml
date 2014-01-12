@@ -1,0 +1,22 @@
+language: ruby
+rvm:
+  - 2.1.0
+  - 1.9.3
+  - ruby-head
+matrix:
+  fast_finish: true
+  allow_failures:
+    - rvm: ruby-head
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgresql
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - mysql -e 'create database event_line_test;'
+  - psql -c 'create database event_line_test;' -U postgres
+script:
+  - export RAILS_ENV=test
+  - bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake

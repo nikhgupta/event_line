@@ -43,3 +43,29 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'pry-rails'
+  gem 'shotgun'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pg'
+  gem 'sqlite3'
+end
+
+group :test do
+  gem 'zeus'
+  gem 'launchy'
+  gem 'rb-fsevent'
+  gem 'poltergeist'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'terminal-notifier-guard'
+  gem 'coveralls', require: false
+  gem 'cucumber-rails', require: false
+end
