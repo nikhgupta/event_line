@@ -44,6 +44,9 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'acts-as-taggable-on'
+gem 'validates_timeliness'
+
 group :development do
   gem 'pry-rails'
   gem 'shotgun'
