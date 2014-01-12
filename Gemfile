@@ -56,6 +56,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'zeus'
   gem 'launchy'
   gem 'rb-fsevent'
   gem 'poltergeist'
